@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/invitelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/themecolor"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mytoolbarInvite"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+        <ImageButton
+            android:id="@+id/backBtninvite"
+            android:paddingLeft="10dp"
+            android:gravity="left"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:background="@drawable/back_btn"/>
+        <ImageView
+
+            android:gravity="center_horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/titlebar"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/themecolor"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_marginBottom="30dp"
+    android:orientation="vertical">
+<Button
+    android:id="@+id/imageWhatsapp"
+    android:text="Share it on whatsapp friends"
+    android:gravity="center"
+    android:textColor="#FFFFFF"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:background="#c23f3b"/>
+  // 1946350
+    <Button
+        android:id="@+id/imageFacebook"
+        android:layout_marginTop="50dp"
+        android:text="Share it on Facebook wall "
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="#c23f3b"
+        android:layout_marginBottom="30dp"/>
+
+</LinearLayout>
+</RelativeLayout>

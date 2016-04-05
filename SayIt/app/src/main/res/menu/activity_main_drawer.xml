@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/hollyMenu"
+            android:title="HOLLYWOOD (English)" />
+
+        <item
+            android:id="@+id/bollyMenu"
+            android:title="BOLLYWOOD (Hindi)" />
+
+
+        <item
+            android:id="@+id/favoritesMenu"
+            android:title="My Favorites" />
+        <item
+            android:id="@+id/shareMenu"
+            android:title="Share with friends" />
+    </group>
+
+
+</menu>

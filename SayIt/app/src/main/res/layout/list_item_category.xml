@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/playBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_play"
+             />
+
+        <ProgressBar
+            android:id="@+id/progress_row"
+            style="@style/MyTheme"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:max="213"
+            android:visibility="gone" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="15dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_toRightOf="@+id/playBtn"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/list_item_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dialogue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category: "
+        />
+    <TextView
+        android:id="@+id/dialogueNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        />
+
+</LinearLayout>
+</LinearLayout>
+
+
+        <LinearLayout
+            android:paddingRight="10dp"
+            android:id="@+id/shareBtnListener"
+            android:layout_width="40dp"
+            android:layout_height="fill_parent"
+           android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/shareBtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+
+            android:layout_gravity="center"
+           android:background="@drawable/fb_messenger_icon"
+
+            />
+</LinearLayout>
+        <LinearLayout
+            android:id="@+id/fvrtBtnListener"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@+id/shareBtnListener"
+            android:clickable="true"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/fvrtBtn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/star_unfilled" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

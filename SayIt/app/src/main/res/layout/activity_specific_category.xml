@@ -1,0 +1,72 @@
+<RelativeLayout
+    android:id="@+id/specific_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mytoolbar"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+        <ImageButton
+            android:id="@+id/backBtnspecific"
+            android:paddingLeft="10dp"
+            android:gravity="left"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:background="@drawable/back_btn"/>
+        <ImageView
+
+            android:gravity="center_horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/titlebar"/>
+    </android.support.v7.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/checkInternet"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Check your Internet connection"/>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_below="@+id/mytoolbar"
+  android:visibility="visible"
+    android:id="@+id/linear_layout"
+    android:layout_width="fill_parent"
+        android:alpha=".9"
+
+        android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:background="@color/nliveo_white"
+        >
+
+        <ListView
+
+            android:background="@color/transparent"
+            android:id="@android:id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            >
+        </ListView>
+    </RelativeLayout>
+
+
+</LinearLayout>
+</RelativeLayout>

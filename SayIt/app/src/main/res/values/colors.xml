@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red_transparent">#c4144c</color>
+    <color name="colorPrimary">#c4144c</color>
+    <color name="colorPrimaryDark">#c4144c</color>
+    <color name="colorAccent">#c4144c</color>
+    <color name="transparent">#00000000</color>
+    <color name="themecolor">#c4144c</color>
+
+</resources>
