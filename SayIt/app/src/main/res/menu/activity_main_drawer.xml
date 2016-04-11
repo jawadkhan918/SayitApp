@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/hollygrp" android:checkableBehavior="none">
         <item
             android:id="@+id/hollyMenu"
-            android:title="HOLLYWOOD (English)" />
+            android:title="Hollywood (English)" />
+    </group>
 
-        <item
+    <group android:id="@+id/bollygrp"  android:checkableBehavior="none">
+
+    <item
             android:id="@+id/bollyMenu"
-            android:title="BOLLYWOOD (Hindi)" />
+            android:title="Bollywood (Hindi)" />
+    </group>
+
+    <group android:id="@+id/favgrp" android:checkableBehavior="none" >
 
 
-        <item
+    <item
             android:id="@+id/favoritesMenu"
             android:title="My Favorites" />
-        <item
+    </group>
+
+    <group android:id="@+id/sharegrp" android:checkableBehavior="none">
+
+    <item
             android:id="@+id/shareMenu"
             android:title="Share with friends" />
     </group>

@@ -2,9 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:orientation="vertical"
-    android:weightSum="2" >
+    android:weightSum="2">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mytoolbar"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Select One Category"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"/>
+
+         </android.support.v7.widget.Toolbar>
 
     <ImageButton
         android:id="@+id/englishBtn"

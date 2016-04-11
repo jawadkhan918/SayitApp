@@ -15,16 +15,24 @@
             android:id="@+id/backBtn"
             android:paddingLeft="10dp"
             android:gravity="left"
-            android:layout_width="20dp"
+            android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/back_btn"/>
        <ImageView
-
+            android:layout_marginRight="30dp"
            android:gravity="center_horizontal"
            android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:src="@drawable/titlebar"/>
         </android.support.v7.widget.Toolbar>
+    <TextView
+        android:id="@+id/favrtText"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No Favourite Added"
+        android:gravity="center"/>
+
 
     <ListView
         android:layout_below="@+id/mytoolbar"
