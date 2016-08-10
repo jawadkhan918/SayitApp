@@ -4,6 +4,7 @@ package rapidzz.product.sayinstyle.activity;
  * Created by rapidzz on 29-Mar-16.
  */
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -18,7 +19,10 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
@@ -506,39 +510,43 @@ if (catNo==1 ) {
 
                 @Override
                 public void onClick(View v) {
-                    // TODO Auto-generated method stub
-                    int posi = getListView().getPositionForView(v);
 
-                    String fName = getDir("audio", Context.MODE_PRIVATE)
-                            .getAbsolutePath()
-                            + "/"
-                            + DialoguesList.get().getDialogues().get(posi)
-                            .getLink() + ".aac";
+                    if (isStoragePermissionGranted()) {
 
-                    File file = new File(fName);
-                    shareName = fName;
-                    if (file.exists())
-                        onClickWhatsApp(v, fName);
-                    else {
-                        if (CheckInternet.isNetConnected(getApplicationContext())) {
-                            String arg[] = new String[3];
-                            arg[2] = "share";
-                            arg[1] = DialoguesList.get().getDialogues()
-                                    .get(posi).getLink();
+                        // TODO Auto-generated method stub
+                        int posi = getListView().getPositionForView(v);
 
-                            arg[0] = "http://www.pakwedds.com/sayit/sound/"
-                                    + DialoguesList.get().getDialogues().get(posi)
-                                    .getLink() + ".aac";
-                            new rapidzz.product.sayinstyle.httpcontrol.HttpAudio(
-                                    SpecificCategory.this, "share")
-                                    .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, arg);
-                            shareView = v;
+                        String fName = getDir("audio", Context.MODE_PRIVATE)
+                                .getAbsolutePath()
+                                + "/"
+                                + DialoguesList.get().getDialogues().get(posi)
+                                .getLink() + ".aac";
 
-                            // onClickWhatsApp(v, fName);
-                        } else
-                            Toast.makeText(getApplicationContext(),
-                                    "Check your Internet", Toast.LENGTH_SHORT)
-                                    .show();
+                        File file = new File(fName);
+                        shareName = fName;
+                        if (file.exists())
+                            onClickWhatsApp(v, fName);
+                        else {
+                            if (CheckInternet.isNetConnected(getApplicationContext())) {
+                                String arg[] = new String[3];
+                                arg[2] = "share";
+                                arg[1] = DialoguesList.get().getDialogues()
+                                        .get(posi).getLink();
+
+                                arg[0] = "http://www.pakwedds.com/sayit/sound/"
+                                        + DialoguesList.get().getDialogues().get(posi)
+                                        .getLink() + ".aac";
+                                new rapidzz.product.sayinstyle.httpcontrol.HttpAudio(
+                                        SpecificCategory.this, "share")
+                                        .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, arg);
+                                shareView = v;
+
+                                // onClickWhatsApp(v, fName);
+                            } else
+                                Toast.makeText(getApplicationContext(),
+                                        "Check your Internet", Toast.LENGTH_SHORT)
+                                        .show();
+                        }
                     }
                 }
             });
@@ -830,8 +838,6 @@ if (catNo==1 ) {
                     e.printStackTrace();
                 }
 
-
-
         }
         adapter.notifyDataSetChanged();
 
@@ -841,7 +847,36 @@ if (catNo==1 ) {
     }
 }
 
+    public  boolean isStoragePermissionGranted() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
 
-
-
+                if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                    requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},10);
+                }
+                else {
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 10);
+                }
+                //    Log.v(TAG,"Permission is granted");
+                return false;
+            } else {
+                //  Log.v(TAG,"Permission is revoked");
+               // ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                return true;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            // Log.v(TAG,"Permission is granted");
+            return true;
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
+            //Log.v(TAG,"Permission: "+permissions[0]+ "was "+grantResults[0]);
+            //resume tasks needing this permission
+        }
+    }
 }

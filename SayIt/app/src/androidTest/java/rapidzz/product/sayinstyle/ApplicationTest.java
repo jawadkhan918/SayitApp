@@ -1,4 +1,4 @@
-package rapidzz.com.sayit;
+package rapidzz.product.sayinstyle;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
