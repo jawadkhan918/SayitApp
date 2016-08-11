@@ -2,7 +2,7 @@
     android:id="@+id/specific_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-android:background="@drawable/background"
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <android.support.v7.widget.Toolbar
@@ -24,7 +24,7 @@ android:background="@drawable/background"
             android:layout_marginRight="40dp"
             android:gravity="center_horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="25dp"
             android:src="@drawable/titlebar"/>
     </android.support.v7.widget.Toolbar>
 
